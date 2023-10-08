@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43dd5e48-a3fc-47fe-ae67-421d93845963" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/autoparking.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoparkinProd/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/frontend/UI_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/frontend/UI_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoparkinProd/src/main/resources/frontend/parking_UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/src/main/resources/frontend/parking_UI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoparkinProd/target/classes/frontend/parking_UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/target/classes/frontend/parking_UI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +48,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "front__v1",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "19",
     "last_opened_file_path": "E:/autoparking/autoparkinProd/src/main/java/org/frontend",
