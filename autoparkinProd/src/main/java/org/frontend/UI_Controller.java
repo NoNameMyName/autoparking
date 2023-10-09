@@ -2,9 +2,11 @@ package org.frontend;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.scene.control.Alert.*;
 
 public class UI_Controller implements Initializable {
     @FXML
@@ -42,12 +44,21 @@ public class UI_Controller implements Initializable {
     }
     owner_info info = new owner_info();
     public void sub_car(ActionEvent actionEvent) {
-        info.surname = surname_field.getText();
-        info.phone_number = phone_num_field.getText();
-        info.brand_of_car = car_brand_field.getText();
-        info.model_of_car = car_model_field.getText();
-        info.plate_number = car_num_field.getText();
 
+        if (info.place_ID == 20) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setContentText("There is no free parking spots");
+            alert.showAndWait();
+            error_check(true);
+        } else {
+            error_check(false);
+            info.surname = surname_field.getText();
+            info.phone_number = phone_num_field.getText();
+            info.brand_of_car = car_brand_field.getText();
+            info.model_of_car = car_model_field.getText();
+            info.plate_number = car_num_field.getText();
+            info.place_ID++;
+        }
         sub_car_button.setText("Submited");
     }
     public void test_out(ActionEvent actionEvent){
@@ -88,7 +99,6 @@ public class UI_Controller implements Initializable {
                 //Later at finish
             }
         });
-
 
         surname_field.textProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.contains(" ")) {
@@ -139,7 +149,6 @@ public class UI_Controller implements Initializable {
                 error_check(false);
             }
         });
-
 
         car_num_field.textProperty().addListener((observable, oldValue, newValue) -> {
             String userInput = car_num_field.getText().toUpperCase();
