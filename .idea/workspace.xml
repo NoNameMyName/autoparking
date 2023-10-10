@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43dd5e48-a3fc-47fe-ae67-421d93845963" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/autoparking.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoparkinProd/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/frontend/UI_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/frontend/UI_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/frontend/auto_UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/frontend/auto_UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoparkinProd/src/main/resources/frontend/parking_UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/src/main/resources/frontend/parking_UI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoparkinProd/target/classes/frontend/parking_UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/target/classes/frontend/parking_UI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,20 +43,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "E:/autoparking/autoparkinProd/src/main/java/org/frontend",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;front__v1&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/autoparking/autoparkinProd/src/main/java/org/frontend&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\autoparking\autoparkinProd\src\main\java\org\frontend\" />
