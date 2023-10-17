@@ -24,7 +24,7 @@
         <ChoiceBox fx:id="find_drop_choice_box" layoutX="380.0" layoutY="299.0" prefHeight="26.0" prefWidth="95.0" />
         <ChoiceBox fx:id="find_take_choice_box1" layoutX="576.0" layoutY="299.0" prefHeight="26.0" prefWidth="95.0" />
       <ChoiceBox fx:id="find_take_choice_box2" layoutX="686.0" layoutY="299.0" prefHeight="26.0" prefWidth="115.0" />
-        <TableView fx:id="table_info" layoutX="380.0" layoutY="38.0" prefHeight="213.0" prefWidth="507.0">
+        <TableView fx:id="table" layoutX="380.0" layoutY="38.0" prefHeight="213.0" prefWidth="507.0">
             <columns>
                 <TableColumn fx:id="surname_column" prefWidth="86.0" sortable="false" text="Surname" />
                 <TableColumn fx:id="car_brand_column" prefWidth="89.0" sortable="false" text="Car Brand" />

@@ -17,6 +17,42 @@ public class Car {
         return carNumber;
     }
 
+    public String getPersonSurname() {
+        return personSurname;
+    }
+
+    public void setPersonSurname(String personSurname) {
+        this.personSurname = personSurname;
+    }
+
+    public String getPersonTelephoneNumber() {
+        return personTelephoneNumber;
+    }
+
+    public void setPersonTelephoneNumber(String personTelephoneNumber) {
+        this.personTelephoneNumber = personTelephoneNumber;
+    }
+
+    public void setCarNumber(String carNumber) {
+        this.carNumber = carNumber;
+    }
+
+    public String getCarMark() {
+        return carMark;
+    }
+
+    public void setCarMark(String carMark) {
+        this.carMark = carMark;
+    }
+
+    public String getCarModel() {
+        return carModel;
+    }
+
+    public void setCarModel(String carModel) {
+        this.carModel = carModel;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -30,7 +66,7 @@ public class Car {
         return Objects.hash(carNumber);
     }
 
-    public Car(String personSurname, String personTelephoneNumber, String carNumber, String carMark, String carModel) {
+    public Car(String personSurname, String personTelephoneNumber, String carMark, String carModel, String carNumber) {
         this.personSurname = personSurname;
         this.personTelephoneNumber = personTelephoneNumber;
         this.carNumber = carNumber;
