@@ -8,13 +8,39 @@ public class Car {
 
     private String personSurname;
     private String personTelephoneNumber;
-
-    private String carNumber;
     private String carMark;
     private String carModel;
+    private String carNumber;
 
+    public String getPersonSurname() {
+        return personSurname;
+    }
+    public void setPersonSurname(String personSurname) {
+        this.personSurname = personSurname;
+    }
+    public String getPersonTelephoneNumber() {
+        return personTelephoneNumber;
+    }
+    public void setPersonTelephoneNumber(String personTelephoneNumber) {
+        this.personTelephoneNumber = personTelephoneNumber;
+    }
+    public String getCarMark() {
+        return carMark;
+    }
+    public void setCarMark(String carMark) {
+        this.carMark = carMark;
+    }
+    public String getCarModel() {
+        return carModel;
+    }
+    public void setCarModel(String carModel) {
+        this.carModel = carModel;
+    }
     public String getCarNumber() {
         return carNumber;
+    }
+    public void setCarNumber(String carNumber) {
+        this.carNumber = carNumber;
     }
 
     @Override
@@ -30,12 +56,12 @@ public class Car {
         return Objects.hash(carNumber);
     }
 
-    public Car(String personSurname, String personTelephoneNumber, String carNumber, String carMark, String carModel) {
+    public Car(String personSurname, String personTelephoneNumber, String carMark, String carModel, String carNumber) {
         this.personSurname = personSurname;
         this.personTelephoneNumber = personTelephoneNumber;
-        this.carNumber = carNumber;
         this.carMark = carMark;
         this.carModel = carModel;
+        this.carNumber = carNumber;
     }
     public Car(){}
 
