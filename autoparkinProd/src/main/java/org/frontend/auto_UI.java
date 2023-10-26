@@ -10,10 +10,10 @@ public class auto_UI extends Application {
     @Override
     public void start(Stage main_UI) throws IOException {
         FXMLLoader root_UI = new FXMLLoader(getClass().getResource("/frontend/parking_UI.fxml"));
-        Scene scene = new Scene(root_UI.load(), 900, 400);
+        Scene Scene = new Scene(root_UI.load(), 990, 450);
         main_UI.setResizable(false);
         main_UI.setTitle("Autoparking by KI-22-1");
-        main_UI.setScene(scene);
+        main_UI.setScene(Scene);
         main_UI.show();
     }
 

@@ -8,8 +8,6 @@ import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.control.*;
-import java.io.File;
-import javafx.stage.FileChooser;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -19,7 +17,6 @@ import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import javafx.scene.control.Alert.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class UI_Controller implements Initializable {
@@ -44,70 +41,54 @@ public class UI_Controller implements Initializable {
     private TableView<Car> table;
 
     @FXML
-    private TableColumn<Car, String> surname_column;
+    private TableColumn<Car, ?> surname_column;
     @FXML
-    private TableColumn<Car, String> car_brand_column;
+    private TableColumn<Car, ?> car_brand_column;
     @FXML
-    private TableColumn<Car, String> car_model_column;
+    private TableColumn<Car, ?> car_model_column;
     @FXML
-    private TableColumn<Car, String> car_num_column;
+    private TableColumn<Car, ?> car_num_column;
     @FXML
-    private TableColumn<Car, String> date_of_park_column;
+    private TableColumn<Car, ?> date_of_park_column;
     @FXML
-    private TableColumn<Car, Integer> spot_num_column;
+    private TableColumn<Car, ?> spot_num_column;
 
     private Car car;
-    private LocalDateTime park_data;
-    private ParkingSystem park_spot;
-    int place_ID;
+
+    private ParkingSystem ParkingSpots;
 
     public void sub_car(ActionEvent actionEvent) {
         car = new Car();
-        if (place_ID == 20) {
-            Alert alert = new Alert(AlertType.ERROR);
-            alert.setContentText("There is no free parking spots");
-            alert.showAndWait();
-            error_check(true);
-            sub_car_button.setText("Please wait. No spots");
-        } else {
-            error_check(false);
-            car.setPersonSurname(surname_field.getText());
-            car.setPersonTelephoneNumber(phone_num_field.getText());
-            car.setCarMark(car_brand_field.getText());
-            car.setCarModel(car_model_field.getText());
-            car.setCarNumber(car_num_field.getText());
 
-            Car new_car = new Car(
-                    surname_field.getText(),
-                    phone_num_field.getText(),
-                    car_brand_field.getText(),
-                    car_model_field.getText(),
-                    car_num_field.getText().toUpperCase()
-                    );
-                
-            cars.add(new_car);
+        car.setPersonSurname(surname_field.getText());
+        car.setPersonTelephoneNumber(phone_num_field.getText());
+        car.setCarMark(car_brand_field.getText());
+        car.setCarModel(car_model_field.getText());
+        car.setCarNumber(car_num_field.getText());
 
-            surname_field.clear();
-            phone_num_field.clear();
-            car_brand_field.clear();
-            car_model_field.clear();
-            car_num_field.clear();
-            sub_car_button.setText("Submitted");
-            warn2.setOpacity(0.0);
-            warn3.setOpacity(0.0);
-            warn5.setOpacity(0.0);
-        }
+        Car new_car = new Car(
+                surname_field.getText(),
+                phone_num_field.getText(),
+                car_brand_field.getText(),
+                car_model_field.getText(),
+                car_num_field.getText().toUpperCase());
 
+        
+        table.getItems().add(new_car);
+
+        resetFields();
     }
 
     ObservableList<Car> cars = FXCollections.observableArrayList();
 
     public void addCarIn(ActionEvent actionEvent) {
         Car old_car = new Car("Savluk", "0991599936", "Mazda", "Miata", "AE6942KI");
+        old_car.setParkingSpot(1);
         table.getItems().add(old_car);
     }
 
     public void out_car(ActionEvent actionEvent) {
+
         car_out_button.setText("Proceed");
 
     }
@@ -118,13 +99,24 @@ public class UI_Controller implements Initializable {
     public void initialize(URL arg0, ResourceBundle arg1) {
         table.getColumns().clear();
 
+        cars = FXCollections.observableArrayList();
+
+        // You can add sample cars like this:
+        Car sampleCar = new Car("Savluk", "0991599936", "Mazda", "Miata", "AE6942KI");
+        sampleCar.setParkingSpot(1);
+        cars.add(sampleCar);
+
+        sub_car_button.setDisable(true);
+
         {
+
             surname_column.setCellValueFactory(new PropertyValueFactory<>("personSurname"));
             car_brand_column.setCellValueFactory(new PropertyValueFactory<>("carMark"));
             car_model_column.setCellValueFactory(new PropertyValueFactory<>("carModel"));
             car_num_column.setCellValueFactory(new PropertyValueFactory<>("carNumber"));
-            date_of_park_column.setCellValueFactory(new PropertyValueFactory<>("park_data"));
-            spot_num_column.setCellValueFactory(new PropertyValueFactory<>("park_spot"));
+            date_of_park_column.setCellValueFactory(new PropertyValueFactory<>("parkingDateTime"));
+            spot_num_column.setCellValueFactory(new PropertyValueFactory<>("parkingSpot"));
+
         }
 
         table.getColumns().addAll(surname_column, car_brand_column, car_model_column, car_num_column,
@@ -164,8 +156,10 @@ public class UI_Controller implements Initializable {
 
         find_take_choice_box1.valueProperty().addListener((observable, oldValue, newValue) -> {
             find_take_choice_box2.getItems().clear();
+
             if (newValue.equals("Surname")) {
                 find_take_choice_box2.setDisable(false);
+
                 List<String> allSurnames = cars.stream()
                         .map(Car::getPersonSurname)
                         .collect(Collectors.toList());
@@ -175,7 +169,16 @@ public class UI_Controller implements Initializable {
                 find_take_choice_box2.getItems().addAll(uniqueSurnames);
             } else {
                 find_take_choice_box2.setDisable(false);
-                // Later at finish
+
+                List<Integer> allParkingSpot = cars.stream()
+                        .map(Car::getParkingSpot)
+                        .collect(Collectors.toList());
+
+                Set<Integer> uniqueParkingSpots = new HashSet<>(allParkingSpot);
+
+                find_take_choice_box2.getItems().addAll(uniqueParkingSpots.stream()
+                        .map(String::valueOf)
+                        .collect(Collectors.toList()));
             }
         });
 
@@ -281,5 +284,17 @@ public class UI_Controller implements Initializable {
         });
 
         table.setItems(filteredList);
+    }
+
+    public void resetFields() {
+        surname_field.clear();
+        phone_num_field.clear();
+        car_brand_field.clear();
+        car_model_field.clear();
+        car_num_field.clear();
+        sub_car_button.setText("Submitted");
+        warn2.setOpacity(0.0);
+        warn3.setOpacity(0.0);
+        warn5.setOpacity(0.0);
     }
 }

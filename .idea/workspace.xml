@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43dd5e48-a3fc-47fe-ae67-421d93845963" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoparkinProd/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/backend/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/backend/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/frontend/UI_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/frontend/UI_Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoparkinProd/src/main/resources/frontend/parking_UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/src/main/resources/frontend/parking_UI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autoparkinProd/target/classes/frontend/parking_UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/target/classes/frontend/parking_UI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoparkinProd/target/classes/org/frontend/resources/parking_UI.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +45,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "front-table",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "19",
     "last_opened_file_path": "E:/autoparking/autoparkinProd/src/main/java/org/frontend",
@@ -145,8 +139,18 @@
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="554b2c0a-58cb-4742-9f59-c68f9e22e071" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="554b2c0a-58cb-4742-9f59-c68f9e22e071">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>

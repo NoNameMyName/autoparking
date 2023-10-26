@@ -5,17 +5,14 @@ import java.time.LocalTime;
 import java.util.Objects;
 
 public class Car {
-
+    
     private String personSurname;
     private String personTelephoneNumber;
-
-    private String carNumber;
     private String carMark;
     private String carModel;
-
-    public String getCarNumber() {
-        return carNumber;
-    }
+    private String carNumber;
+    private LocalDateTime parkingDateTime;
+    private int parkingSpot;
 
     public String getPersonSurname() {
         return personSurname;
@@ -33,10 +30,6 @@ public class Car {
         this.personTelephoneNumber = personTelephoneNumber;
     }
 
-    public void setCarNumber(String carNumber) {
-        this.carNumber = carNumber;
-    }
-
     public String getCarMark() {
         return carMark;
     }
@@ -51,6 +44,30 @@ public class Car {
 
     public void setCarModel(String carModel) {
         this.carModel = carModel;
+    }
+
+    public String getCarNumber() {
+        return carNumber;
+    }
+
+    public void setCarNumber(String carNumber) {
+        this.carNumber = carNumber;
+    }
+
+    public LocalDateTime getParkingDateTime() {
+        return parkingDateTime;
+    }
+
+    public void setParkingDateTime(LocalDateTime parkingDateTime) {
+        this.parkingDateTime = parkingDateTime;
+    }
+
+    public int getParkingSpot() {
+        return parkingSpot;
+    }
+
+    public void setParkingSpot(int parkingSpot) {
+        this.parkingSpot = parkingSpot;
     }
 
     @Override
