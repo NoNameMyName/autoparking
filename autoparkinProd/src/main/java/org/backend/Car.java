@@ -13,8 +13,24 @@ public class Car {
     private String carMark;
     private String carModel;
 
-    public String getCarNumber() {
+    public String getCarNumberFromClassCar() {
         return carNumber;
+    }
+
+    public String getPersonSurname() {
+        return personSurname;
+    }
+
+    public String getPersonTelephoneNumber() {
+        return personTelephoneNumber;
+    }
+
+    public String getCarMark() {
+        return carMark;
+    }
+
+    public String getCarModel() {
+        return carModel;
     }
 
     @Override
@@ -42,9 +58,9 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
+                ", carNumber='" + carNumber + '\'' +
                 "personSurname='" + personSurname + '\'' +
                 ", personTelephoneNumber='" + personTelephoneNumber + '\'' +
-                ", carNumber='" + carNumber + '\'' +
                 ", carMark='" + carMark + '\'' +
                 ", carModel='" + carModel + '\'' +
                 '}';

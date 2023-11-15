@@ -9,6 +9,7 @@ public class Constants {
     public static final long STARTDAILYPAYMANT = 12;
     public static final double HOURSINDAY = 24.0;
     public static final double HOURSALLNIGHT = 11.0;
+    public static final int TOTALSPOTS = 10;
 
 
 }

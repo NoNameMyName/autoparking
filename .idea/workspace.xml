@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43dd5e48-a3fc-47fe-ae67-421d93845963" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/autoparking.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoparkinProd/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoparkinProd/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/backend/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/backend/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/backend/ParkingSpot.java" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/backend/ParkingSpot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/backend/ParkingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/backend/ParkingSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/main/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/main/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/autoparkinProd/src/main/java/org/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,13 +23,11 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
-        <option value="JavaFXApplication" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -37,44 +36,42 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2VhSEtTDIRGP2iQIj93joh3THiZ" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "E:/autoparking/autoparkinProd/src/main/java/org/frontend",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Java/git/autoparking&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\autoparking\autoparkinProd\src\main\java\org\frontend\" />
-      <recent name="E:\autoparking\autoparkinProd\src\main\java\org\frontend" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\autoparking\autoparkinProd\src\main\resources\frontend" />
-      <recent name="E:\autoparking\autoparkinProd\src\main\resources" />
-      <recent name="E:\autoparking\autoparkinProd\src\main\java\org\frontend\resources" />
-      <recent name="E:\autoparking\autoparkinProd\src\main\java\org\frontend" />
-      <recent name="E:\autoparking\autoparkinProd\src\main\java\org\frontend\resources\" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
+      <recent name="D:\Java\git\autoparking\prod\src\backend\main" />
+      <recent name="D:\Java\git\autoparking\prod\src\backend" />
+      <recent name="D:\Java\git\autoparking\prod\src\prod" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.auto_UI">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="CarParkingApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.frontend.CarParkingApp" />
+      <module name="autoparkinProd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.frontend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.main.Main" />
       <module name="autoparkinProd" />
@@ -89,11 +86,8 @@
       </method>
     </configuration>
     <configuration name="auto_UI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="19" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.frontend.auto_UI" />
       <module name="autoparkinProd" />
-      <option name="PROGRAM_PARAMETERS" value="--module-path C:\Program Files\Java\javafx-sdk-19.0.2.1\lib --add-modules=javafx.controls" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.frontend.*" />
@@ -117,15 +111,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.auto_UI" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.test" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.auto_UI" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.CarParkingApp" />
+        <item itemvalue="Application.auto_UI" />
         <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
@@ -151,15 +141,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.ClassNotFoundException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

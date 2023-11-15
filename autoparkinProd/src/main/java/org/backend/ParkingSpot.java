@@ -8,6 +8,12 @@ import java.time.chrono.ChronoLocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 public class ParkingSpot {
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
     private Car car;
     private LocalDateTime parkingData;
 
@@ -18,7 +24,8 @@ public class ParkingSpot {
         this.parkingData = parkingData;
     }
 
-    public ParkingSpot() {
+    public ParkingSpot(int id) {
+        this.id = id;
         car = null;
         parkingData = null;
     }
@@ -37,7 +44,7 @@ public class ParkingSpot {
     }
 
     public String getCarNumber() {
-        return car.getCarNumber();
+        return car.getCarNumberFromClassCar();
     }
 
     public Car getCar() {

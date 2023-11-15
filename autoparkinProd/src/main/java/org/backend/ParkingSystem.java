@@ -6,44 +6,54 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import static org.main.Constants.TOTALSPOTS;
 
 public class ParkingSystem {
 
-    Map<Integer, ParkingSpot> parkingSpots = new HashMap<>();
+    ArrayList<ParkingSpot> parkingSpots = new ArrayList<>(TOTALSPOTS);
+
     public ParkingSystem(int totalSpots) {
         for (int i = 1; i <= totalSpots; i++) {
-            parkingSpots.put(i, new ParkingSpot());
+            parkingSpots.add(new ParkingSpot(i));
         }
     }
 
+    public ParkingSpot getSpot(int idOfSpot){
+        for (ParkingSpot el: parkingSpots){
+            if (el.isCarStayed() != null && el.getId() == idOfSpot){
+                return el;
+            }
+        }
+        return null;
+    }
+
     public int parkCar(Car car){
-        for (Map.Entry<Integer, ParkingSpot> entry: parkingSpots.entrySet()){
-            ParkingSpot spot = entry.getValue();
-            if (spot.isCarStayed() == null){
-                spot.setCar(car);
-                return entry.getKey();
+        for (ParkingSpot el: parkingSpots){
+            if (el.isCarStayed() == null){
+                el.setCar(car);
+                return el.getId();
             }
         }
         return -1;
     }
     public int parkCarByDateTime(Car car, LocalDateTime parkingData){
-        for (Map.Entry<Integer, ParkingSpot> entry: parkingSpots.entrySet()){
-            ParkingSpot spot = entry.getValue();
-            if (spot.isCarStayed() == null){
-                spot.setCarByDateTime(car, parkingData);
-                return entry.getKey();
+        for (ParkingSpot el: parkingSpots){
+            if (el.isCarStayed() == null){
+                el.setCar(car);
+                el.setParkingData(parkingData);
+                return el.getId();
             }
         }
         return -1;
     }
 
     public ParkingSpot findSpot(String carNumber){
-        for (Map.Entry<Integer, ParkingSpot> entry: parkingSpots.entrySet()) {
-            ParkingSpot spot = entry.getValue();
-            if (carNumber.equals(spot.getCarNumber())) {
-                return spot;
+        for (ParkingSpot el: parkingSpots) {
+            if (carNumber.equals(el.getCarNumber())) {
+                return el;
             }
         }
         return null;
