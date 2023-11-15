@@ -1,7 +1,6 @@
 package org.frontend;
 
 import org.backend.Car;
-import org.backend.ParkingSpot;
 import org.backend.ParkingSystem;
 
 import javax.swing.*;
