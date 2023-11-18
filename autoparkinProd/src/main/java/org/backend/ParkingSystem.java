@@ -39,6 +39,7 @@ public class ParkingSystem {
         }
         return -1;
     }
+
     public int parkCarByDateTime(Car car, LocalDateTime parkingData){
         for (ParkingSpot el: parkingSpots){
             if (el.isCarStayed() == null){

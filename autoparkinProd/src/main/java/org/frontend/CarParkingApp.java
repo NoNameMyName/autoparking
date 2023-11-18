@@ -58,7 +58,7 @@ public class CarParkingApp {
         table.setRowSorter(sorter);
 
         JButton addButton = new JButton("Add Car");
-        for (int i = 0; i < TOTALSPOTS; i++) {
+        for (int i = 0; i <= 30; i++) {
             if (parkingSystem.getSpot(i) != null){
                 String id = Integer.toString(parkingSystem.getSpot(i).getId());
                 String lastName = parkingSystem.getSpot(i).getCar().getPersonSurname();
@@ -113,15 +113,22 @@ public class CarParkingApp {
         String carModel = carModelField.getText();
         String parkingTime = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(new Date());
         String id = Integer.toString(parkingSystem.parkCar(new Car(lastName, phone, carBrand, carModel, carNumber)));
+        if (Integer.parseInt(id) == -1){
+            JOptionPane.showMessageDialog(frame, "Sorry all parking spots already occupied", "Error",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            String[] rowData = {id, lastName, phone, carNumber, carBrand, carModel, parkingTime};
+            tableModel.addRow(rowData);
 
-        String[] rowData = {id, lastName, phone, carNumber, carBrand, carModel, parkingTime};
-        tableModel.addRow(rowData);
+            // Clear form fields after adding a car
+        }
 
-        // Clear form fields after adding a car
         lastNameField.setText("");
         phoneField.setText("");
         carNumberField.setText("");
         carBrandField.setText("");
         carModelField.setText("");
+
     }
 }
