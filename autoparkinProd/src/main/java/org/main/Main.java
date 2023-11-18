@@ -11,7 +11,7 @@ import static org.main.Constants.TOTALSPOTS;
 
 public class Main {
     public static void main(String[] args) {
-        ParkingSystem parkingSystem = new ParkingSystem(TOTALSPOTS);
+        ParkingSystem parkingSystem = new ParkingSystem();
         Car car1 = new Car("Smykov", "0988738471", "KE0708KC",
                 "Ford", "Fusion");
         Car car2 = new Car("AAAA", "999999999", "rgfdgd",

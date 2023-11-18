@@ -15,8 +15,8 @@ public class ParkingSystem {
 
     ArrayList<ParkingSpot> parkingSpots = new ArrayList<>(TOTALSPOTS);
 
-    public ParkingSystem(int totalSpots) {
-        for (int i = 1; i <= totalSpots; i++) {
+    public ParkingSystem() {
+        for (int i = 1; i <= TOTALSPOTS; i++) {
             parkingSpots.add(new ParkingSpot(i));
         }
     }
@@ -58,6 +58,19 @@ public class ParkingSystem {
             }
         }
         return null;
+    }
+
+    public double findBySpotIdAndPay(int idSpot){
+        double bill;
+        for (ParkingSpot el: parkingSpots){
+            if (el.getId() == idSpot && el.getCar() != null){
+                LocalDateTime parkingData = el.getParkingData();
+                bill = payment(parkingData);
+                el.clearSpot();
+                return bill;
+            }
+        }
+        return -1;
     }
 
     public double findByCarNumberAndPay(String carNumber){
