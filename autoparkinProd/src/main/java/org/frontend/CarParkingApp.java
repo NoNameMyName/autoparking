@@ -5,7 +5,6 @@ import static org.main.Constants.TOTALSPOTS;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.ZoneOffset;
@@ -18,7 +17,7 @@ import javax.swing.table.*;
 import org.backend.Car;
 import org.backend.ParkingSystem;
 
-import javafx.scene.input.KeyEvent;
+import javafx.scene.control.Alert;
 
 public class CarParkingApp {
     private JFrame mainFrame;
@@ -81,7 +80,7 @@ public class CarParkingApp {
             if (parkingSystem.getSpot(i) != null) {
                 String id = Integer.toString(parkingSystem.getSpot(i).getId());
                 String lastName = parkingSystem.getSpot(i).getCar().getPersonSurname();
-                String carNumber = parkingSystem.getSpot(i).getCar().getCarNumberFromClassCar().toUpperCase();
+                String carNumber = parkingSystem.getSpot(i).getCar().getCarNumberFromClassCar();
                 String carBrand = parkingSystem.getSpot(i).getCar().getCarMark();
                 String carModel = parkingSystem.getSpot(i).getCar().getCarModel();
                 Instant instant = parkingSystem.getSpot(i).getParkingData().toInstant(ZoneOffset.ofTotalSeconds(7200));
@@ -92,11 +91,19 @@ public class CarParkingApp {
             }
         }
         takeCarBox2.setEditable(false);
+
+        submitCarButton.setEnabled(false);
         addListeners();
         submitCarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                addCar(parkingSystem);
+                if (!carNumberField.equals("")) {
+                    addCar(parkingSystem);
+                } else {
+                    JOptionPane.showMessageDialog(mainFrame, "Enter the car number", "Error",
+                            JOptionPane.INFORMATION_MESSAGE);
+                }
+
             }
         });
         carOutButton.addActionListener(new ActionListener() {
@@ -400,7 +407,7 @@ public class CarParkingApp {
     public void addCar(ParkingSystem parkingSystem) {
         String lastName = lastNameField.getText();
         String phone = phoneNumberField.getText();
-        String carNumber = carNumberField.getText();
+        String carNumber = carNumberField.getText().toUpperCase();
         String carBrand = carBrandField.getText();
         String carModel = carModelField.getText();
         String parkingTime = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(new Date());
@@ -409,7 +416,7 @@ public class CarParkingApp {
             JOptionPane.showMessageDialog(mainFrame, "Sorry all parking spots already occupied", "Error",
                     JOptionPane.INFORMATION_MESSAGE);
         } else {
-            String[] rowData = { id, lastName, phone, carNumber, carBrand, carModel, parkingTime };
+            String[] rowData = { id, lastName, carBrand, carModel, carNumber, parkingTime };
             tableModel.addRow(rowData);
 
         }
@@ -429,9 +436,15 @@ public class CarParkingApp {
                 if (selectedIdString.equals(valueInTable)) {
                     tableModel.removeRow(i);
                     int spotId = Integer.parseInt(selectedIdString); // Parse the selected ID
-                    double payment = parkingSystem.findBySpotIdAndPay(spotId);
-                    JOptionPane.showMessageDialog(mainFrame, "Payment: " + Double.toString(payment) +
-                            " grn", "To pay", JOptionPane.INFORMATION_MESSAGE);
+                    double paymentID = parkingSystem.findBySpotIdAndPay(spotId);
+                    if (paymentID == -1) {
+                        JOptionPane.showMessageDialog(mainFrame, "Thanks for Stopping here", "Farewell",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(mainFrame, "Payment: " + Double.toString(paymentID) +
+                                " grn", "To pay", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    takeCarBox2.removeItem(selectedIdString);
                     break;
                 }
             }
@@ -440,17 +453,29 @@ public class CarParkingApp {
 
             for (int i = 0; i < tableModel.getRowCount(); i++) {
                 String valueInTable = (String) tableModel.getValueAt(i, 4); // Assuming car number is at index 4
-                if (selectedCarNumber.equals(valueInTable)) {
+                if (valueInTable.equals(selectedCarNumber)) {
                     tableModel.removeRow(i);
-                    double payment = parkingSystem.findByCarNumberAndPay(selectedCarNumber); // Adjust this method
-                                                                                             // accordingly
-                    JOptionPane.showMessageDialog(mainFrame, "Payment: " + Double.toString(payment) +
-                            " grn", "To pay", JOptionPane.INFORMATION_MESSAGE);
+                    double paymentNumber = parkingSystem.findByCarNumberAndPay(selectedCarNumber);
+                    if (paymentNumber == -1) {
+                        JOptionPane.showMessageDialog(mainFrame, "Thanks for Stopping here", "Farewell",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(mainFrame, "Payment: " + Double.toString(paymentNumber) +
+                                " grn", "To pay", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    takeCarBox2.removeItem(selectedCarNumber);
                     break;
                 }
             }
         }
 
+    }
+
+    public void inOut(double pay) {
+        if (pay == -1) {
+            JOptionPane.showMessageDialog(mainFrame, "Thanks for Stopping here", "Farewell",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 
     public void resetAll() {
