@@ -201,12 +201,13 @@ public class CarParkingApp {
         // Buttons
         submitCarButton = new JButton("Submit");
         submitCarButton.setBounds(14, 258, 95, 36);
-        submitCarButton.setBackground(new Color(0x1f, 0x8f, 0xe8));
+        submitCarButton.setBackground(new Color(0x1f8fe8));
         infoPanel.add(submitCarButton);
 
         carOutButton = new JButton("Take out Car");
         carOutButton.setBounds(576, 335, 106, 25);
-        carOutButton.setBackground(new Color(0x1f, 0x8f, 0xe8));
+        carOutButton.setBackground(new Color(0x888888));
+        carOutButton.setEnabled(false);
         infoPanel.add(carOutButton);
 
         // ChoiceBoxes
@@ -328,6 +329,14 @@ public class CarParkingApp {
                                                                                    // "Car Number" column
                     }
                 }
+            }
+        });
+
+        takeCarBox2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                carOutButton.setEnabled(true);
+                carOutButton.setBackground(new Color(0x1f8fe8));
+                takeCarBox2.removeActionListener(this);
             }
         });
 
