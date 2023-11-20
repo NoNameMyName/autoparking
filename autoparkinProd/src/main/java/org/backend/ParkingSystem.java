@@ -75,22 +75,24 @@ public class ParkingSystem {
 
     public double findByCarNumberAndPay(String carNumber){
         double bill;
-        ParkingSpot spot = findSpot(carNumber);
-        if (spot != null){
-            LocalDateTime parkingData = spot.getParkingData();
-            bill = payment(parkingData);
-            spot.clearSpot();
-            return bill;
+        for (ParkingSpot el: parkingSpots){
+            if (el.getCar() != null && el.getCar().getCarNumber().equals(carNumber)){
+                LocalDateTime parkingData = el.getParkingData();
+                bill = payment(parkingData);
+                el.clearSpot();
+                return bill;
+            }
         }
-        else
-            return -1;
+        return 0;
     }
 
     public double payment(LocalDateTime parkingData) {
         LocalDateTime currentDateTime = LocalDateTime.now();
-
         Duration duration = Duration.between(parkingData, currentDateTime);
-        if (duration.toHours() > Constants.STARTDAILYPAYMANT){
+        if (duration.toMinutes() <= 5){
+            return -1;
+        }
+        else if (duration.toHours() > Constants.STARTDAILYPAYMANT){
             if (duration.toDays() > 1){
                 return (duration.toDays() + 1) * Constants.DAILYPAYMANT;
             }

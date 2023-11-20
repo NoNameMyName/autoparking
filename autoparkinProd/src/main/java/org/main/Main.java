@@ -14,9 +14,9 @@ public class Main {
     public static void main(String[] args) {
         ParkingSystem parkingSystem = new ParkingSystem();
         Car car1 = new Car("Smykov", "0988738471",
-                "Ford", "Fusion", "ke0708KC");
-        Car car2 = new Car("Savluk", "0991599936", "Mazda",
-                "Miata", "AE6942ki");
+                "Ford", "Fusion", "КЕ0708НТ");
+        Car car2 = new Car("Savluk", "0991599936",
+                "Mazda", "Miata", "АЕ6942КІ");
         LocalDateTime testdate = LocalDateTime.of(2023, 9, 23, 16, 15, 20);
         System.out.println(parkingSystem.parkCarByDateTime(car1, testdate));
         System.out.println(parkingSystem.parkCar(car2));
